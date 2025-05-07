@@ -26,4 +26,5 @@
 ## Adding Libarys
 - `cd your_project`
 - `poetry add pandas` the libary is added in pyproject.toml
+- Update Libary: `poetry update pandas`
 
