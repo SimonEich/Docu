@@ -1,6 +1,6 @@
-#Python
+# Python
 
-##Poetry Project pulled from Github
+## Poetry Project pulled from Github
 - pull the git repo: `git clone https://github.com/delimarr/simon_demo.git`
 - cd non_poetry_project
 - `poetry init`  # Only if pyproject.toml does not exist
@@ -11,7 +11,7 @@
 - navigate to the folder, containing your `pyproject.toml`
 - install your python dependencies and package, run: `poetry install`
 
-#New Poetry-Project
+# New Poetry-Project
 - create new python 3.12 environment: `python3.12 -m venv name_env`
 - active the newly create environment: `.\name_env\Scripts\activate` or mac `source name_env/Scripts/activate`
 - install poetry: `pip install poetry`
@@ -23,5 +23,7 @@
 - Open the virtual environment shell: `poetry shell`
 - To run Python commands: `python my_project/__init__.py`
 
-
+## Adding Libarys
+- `cd your_project`
+- `poetry add pandas` the libary is added in pyproject.toml
 
