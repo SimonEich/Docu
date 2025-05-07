@@ -3,8 +3,8 @@
 ##Poetry Project pulled from Github
 - pull the git repo: `git clone https://github.com/delimarr/simon_demo.git`
 - cd non_poetry_project
-- 'poetry init'  # Only if pyproject.toml does not exist
-- 'poetry install'  # After answering prompts
+- `poetry init`  # Only if pyproject.toml does not exist
+- `poetry install`  # After answering prompts
 - create new python 3.12 environment: `python3.12 -m venv name_env`
 - active the newly create environment: `.\name_env\Scripts\activate` or mac `source name_env/Scripts/activate`
 - install poetry: `pip install poetry`
@@ -15,13 +15,13 @@
 - create new python 3.12 environment: `python3.12 -m venv name_env`
 - active the newly create environment: `.\name_env\Scripts\activate` or mac `source name_env/Scripts/activate`
 - install poetry: `pip install poetry`
-- create poetry: 'poetry new my_project'
-- 'cd my_project'
-- (Optional)'poetry env use python3.12'  # Or whichever version you want
-- (Optional)To add a dependency:'poetry add requests' 
-- (Optional)To add a dev dependency:'poetry add --dev black'
-- Open the virtual environment shell: 'poetry shell'
-- To run Python commands: 'python my_project/__init__.py'
+- create poetry: `poetry new my_project`
+- `cd my_project`
+- (Optional)`poetry env use python3.12`  # Or whichever version you want
+- (Optional)To add a dependency:`poetry add requests` 
+- (Optional)To add a dev dependency:`poetry add --dev black`
+- Open the virtual environment shell: `poetry shell`
+- To run Python commands: `python my_project/__init__.py`
 
 
 
