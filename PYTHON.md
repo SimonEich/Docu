@@ -30,5 +30,5 @@
 
 # Main File
 - `if __name__ == "__main__":`
-- Folder that contain parts of the program should contain a - ` __init__ `
+- Folder that contain parts of the program should contain a ` __init__ `
  file.
