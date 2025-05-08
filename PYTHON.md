@@ -28,3 +28,6 @@
 - `poetry add pandas` the libary is added in pyproject.toml
 - Update Libary: `poetry update pandas`
 
+# Main File
+- `if __name__ == "__main__":`
+- Folder that contain parts of the program should contain a '__init.py__` file.
