@@ -56,5 +56,9 @@ Creating a DB, and creating tables.
         data_db = self.cursor.fetchall()
 ### Random Data
         self.cursor.execute("SELECT * FROM words WHERE count = 0 ORDER BY RANDOM() LIMIT 1;")
+        row = self.cursor.fetchone()
+
 ### Insert Data
-        self.cursor.execute("INSERT INTO words VALUES (?, ?, ?)", (word, translation, 0))        
+        self.cursor.execute("INSERT INTO words VALUES (?, ?, ?)", (word, translation, 0))  
+        self.conn.commit()
+
