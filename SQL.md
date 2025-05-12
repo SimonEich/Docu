@@ -41,4 +41,20 @@ Creating a DB, and creating tables.
     conn.commit()
     print("Tables created successfully.")
 
-## Python: Write Data 
+## Python: Edit Data 
+### Delete Data
+        self.cursor.execute("DELETE FROM words WHERE word = ?", (word,))
+        self.conn.commit()
+### Edit Data
+        self.cursor.execute(
+            "UPDATE words SET word = ?, translation = ? WHERE word = ?",
+            (new_word, new_translation, old_word)
+        )
+        self.conn.commit()
+### Read Data
+        self.cursor.execute("SELECT * FROM words")
+        data_db = self.cursor.fetchall()
+### Random Data
+        self.cursor.execute("SELECT * FROM words WHERE count = 0 ORDER BY RANDOM() LIMIT 1;")
+### Insert Data
+        self.cursor.execute("INSERT INTO words VALUES (?, ?, ?)", (word, translation, 0))        
