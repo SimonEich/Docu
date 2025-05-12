@@ -1,6 +1,7 @@
 # SQL
 
 ## Python SQLite
+Creating a DB, and creating tables.
 
     import sqlite3
 
@@ -39,3 +40,5 @@
 
     conn.commit()
     print("Tables created successfully.")
+
+## Python: Write Data 
