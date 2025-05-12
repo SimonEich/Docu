@@ -5,6 +5,7 @@
     import sqlite3
 
     def create_connection(db_name="example.db"):
+    
     """Create and return a connection to the SQLite database."""
     conn = sqlite3.connect(db_name)
     return conn
