@@ -1,2 +1,2 @@
 # Docu
-Documentation
+Documentation of everything I used. 
