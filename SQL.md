@@ -2,18 +2,18 @@
 
 ## Python SQLite
 
-import sqlite3
+    import sqlite3
 
-def create_connection(db_name="example.db"):
+    def create_connection(db_name="example.db"):
     """Create and return a connection to the SQLite database."""
     conn = sqlite3.connect(db_name)
     return conn
 
-def create_tables(conn):
+    def create_tables(conn):
     """Create two connected tables: users and posts."""
     cursor = conn.cursor()
 
-     Enable foreign key constraint
+    Enable foreign key constraint
     cursor.execute("PRAGMA foreign_keys = ON")
 
     # Create users table
