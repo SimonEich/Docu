@@ -42,6 +42,11 @@
 - `--hidden-import=...`import modules manualy that pyinstalle might not find (tkinter, cv2, PIL, ...)
 - `--onefile` bundle everything in one file. On Mac not with `--noconsole`or `--windowed`
 
+### With Poetry
+- `poetry run pyinstaller [your options here]` Options like above. Like this pyinstaller should find Modules/Dependencies
+- `poetry add --dev pyinstaller`to add pyinstaller temporaly (not production)
+
+
 # Main File
 - `if __name__ == "__main__":`
 - Folder that contain parts of the program should contain a ` __init__.py `
