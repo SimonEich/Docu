@@ -29,6 +29,19 @@
 - Update Libary: `poetry update pandas`
 - Removing Libary: `poetry remove pandas`
 
+# Standalone Application
+- cd to main.py folder
+- `pip install pyinstaller`
+  
+-  `pyinstaller`
+- `main.py`Entry script
+- `--noconsole`No terminal or console
+- `--windowed`or `-w`supresses terminal (similar than --noconsole)
+- `--name nameApp`Name of the App
+- `--add-data "source_path:destination_path"`additiononal folder and files (on Windows ; instead of : )
+- `--hidden-import=...`import modules manualy that pyinstalle might not find (tkinter, cv2, PIL, ...)
+- `--onefile` bundle everything in one file. On Mac not with `--noconsole`or `--windowed`
+
 # Main File
 - `if __name__ == "__main__":`
 - Folder that contain parts of the program should contain a ` __init__.py `
