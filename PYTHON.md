@@ -33,7 +33,7 @@
 - cd to main.py folder
 - `pip install pyinstaller`
   
--  `pyinstaller`
+-  `pyinstaller`command
 - `main.py`Entry script
 - `--noconsole`No terminal or console
 - `--windowed`or `-w`supresses terminal (similar than --noconsole)
