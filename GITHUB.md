@@ -23,7 +23,6 @@
 - `git checkout main` Merge a Branch into Main
 - `git merge your-branch-name` If there are no conflicts, Git will merge the changes automatically.
 - `git push origin main` After merging, push the updated main branch.
-- `git push -u origin your-branch-name` git push -u origin your-branch-name
 
 ## Pull/Push
 ### Clone Respository
