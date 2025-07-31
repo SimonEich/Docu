@@ -14,7 +14,7 @@
 #### Upgrate 
 
 ## Folder Structure
-## Models
-## Security
-## Views
-## Wizzard
+### Models
+### Security
+### Views
+### Wizzard
