@@ -10,7 +10,7 @@
 ## Modules
 ### Create Module
 #### Folder Structure
-`custom_maintenance/
+custom_maintenance/
 ├── __init__.py
 ├── __manifest__.py
 ├── models/
@@ -28,7 +28,7 @@
 ├── data/
 │   ├── cron_preventive_maintenance.xml
 │   └── demo_data.xml
-`
+
 
 
 
