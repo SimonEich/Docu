@@ -1,0 +1,69 @@
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install git
+brew install node
+brew install python@3.11
+echo 'export PATH="/opt/homebrew/opt/python@3.11/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+xcode-select --install
+npm install -g yarn
+mkdir -p ~/odoo18-dev && cd ~/odoo18-dev
+cat <<EOF > docker-compose.yml
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_DB: odoo
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  odoo-db-data:
+EOF
+docker compose up -d
+docker compose logs -f db
+docker exec -it $(docker compose ps -q db) psql -U postgres -c "CREATE USER odoo WITH SUPERUSER PASSWORD 'odoo';"
+docker exec -it $(docker compose ps -q db) psql -U postgres -c "CREATE DATABASE odoo OWNER odoo;"
+cd ~/odoo18-dev
+git clone https://github.com/odoo/odoo.git
+cd odoo
+git fetch --all --tags
+git checkout 18.0 || git checkout master
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip setuptools wheel
+brew install pkg-config libxml2 libxslt libpq jpeg zlib freetype
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+pip install -r requirements.txt
+npm install -g rtlcss
+npm install -g less less-plugin-clean-css
+brew install wkhtmltopdf
+cat <<EOF > ~/odoo18-dev/odoo.conf
+[options]
+addons_path = /Users/$USER/odoo18-dev/odoo/addons
+data_dir = /Users/$USER/odoo18-dev/odoo/.local/share/Odoo
+db_host = 127.0.0.1
+db_port = 5432
+db_user = odoo
+db_password = odoo
+xmlrpc = True
+logfile = /tmp/odoo18.log
+admin_passwd = admin123
+http_port = 8069
+EOF
+source .venv/bin/activate
+./odoo-bin -c ~/odoo18-dev/odoo.conf
+docker compose logs -f db
+docker exec -it $(docker compose ps -q db) psql -U odoo -d odoo
+docker compose down
+docker compose down -v
